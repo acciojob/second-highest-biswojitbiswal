@@ -8,9 +8,13 @@
 
 <body>	
 	<script>
-		function secondHighest(arr) {
-			//Write your code here
-			    if (arr.length < 2) {
+		
+        function secondHighest(arr) {
+            // Convert array elements to numbers
+            arr = arr.map(Number);
+
+            // If the array has less than 2 unique values, return -Infinity
+            if (arr.length < 2 || new Set(arr).size < 2) {
                 return -Infinity;
             }
 
@@ -27,7 +31,7 @@
             }
 
             return secondHighest === -Infinity ? -Infinity : secondHighest;
-		}
+        }
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
